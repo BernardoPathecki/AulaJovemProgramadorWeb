@@ -1,11 +1,13 @@
 ﻿
-<table class="table text-white">
+<table class="table">
     <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Alunos</th>
             <th scope="col">Nota</th>
             <th scope="col">Situação</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Endereço</th>
         </tr>
     </thead>
     <tbody>
@@ -13,37 +15,45 @@
             <th scope="row">1</th>
             <td>Marcelo</td>
             <td>9.0</td>
-            <td colspan="2">Aprovado</td>
+            <td>Aprovado</td>
+            <td>85421-002</td>
+            <td><a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="85421-002"> Endereco</a></td>
         </tr>
         <tr>
             <th scope="row">2</th>
-            <td>Juliano</td>
-            <td>0.5</td>
-            <td colspan="2">Reprovado</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
             <td>Bernardo</td>
             <td>4.5</td>
-            <td colspan="2">Aprovado</td>
+            <td>Aprovado</td>
+            <td>88358-080</td>
+            <td><a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="88358-080"> Endereco</a></td>
         </tr>
         <tr>
             <th scope="row">3</th>
             <td>Levi</td>
             <td>7.5</td>
-            <td colspan="2">Aprovado</td>
+            <td>Aprovado</td>
+            <td>88553-089</td>
+            <td><a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="88553-089"> Endereco</a></td>
         </tr>
         <tr>
-            <th scope="row">3</th>
+            <th scope="row">4</th>
             <td>Enzo</td>
             <td>5.5</td>
-            <td colspan="2">Reprovado</td>
+            <td>Reprovado</td>
+            <td>99882-090</td>
+            <td><a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="99882-090"> Endereco</a></td>
         </tr>
         <tr>
-            <th scope="row">3</th>
+            <th scope="row">5</th>
             <td>Raphael</td>
             <td>6.5</td>
-            <td colspan="2">Aprovado</td>
+            <td>Aprovado</td>
+            <td>88325-020</td>
+            <td><a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="88325-020"> Endereco</a></td>
         </tr>
     </tbody>
 </table>
+<div class="text-center">
+    <a type="submit" class="btn btn-primary" role="button" asp-area="" asp-controller="Aluno" asp-action="AdicionarAluno" > Adicionar</a>
+</div>
+

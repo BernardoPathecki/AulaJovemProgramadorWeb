@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - JovemProgramadorWeb</title>
@@ -8,9 +9,18 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/JovemProgramadorWeb.styles.css" asp-append-version="true" />
 </head>
-<body class="bg-dark bg-opacity-75 ">
+<body >
+    <style>
+        body {
+            background-color: #B0C4DE;
+        }
+
+    </style>
     <header>
         <nav class="navbar navbar-expand-md navbar-toggleable-sm navbar-light bg-body border-bottom box-shadow mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list text-white" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
             <div class="container-fluid">
                 <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">JovemProgramadorWeb</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -39,7 +49,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-white">
+    <footer class="border-top footer text-black">
         <div class="container">
             &copy; 2023 - JovemProgramadorWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
