@@ -1,6 +1,48 @@
-﻿
+﻿<style>
+    .Tudo{
+        display : flex;
+        flex-direction:column;
+        justify-content : center;
+        width : 100%;
+    }
+    .form{
+        width: 30%;
+        align-self: center;
+
+    }
+    .formFilho{
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+    .botao {
+        align-self: center;
+    }
+</style>
 <h1 class="text-center">Adicionar</h1>
-<div class="text-center">
-<a type="submit" class="btn btn-primary " role="button" asp-area="" asp-controller="Aluno" asp-action="Aluno"> Voltar</a>
+<br />
+<div class="Tudo">
+    <div class="form">
+        <div class="formFilho form-floating">
+            <input type="text" class="form-control" id="floatingInputGrid" placeholder="nomeAluno" value="Insira o nome">
+            <label for="floatingInputGrid">Nome :</label>
+        </div>
+        <div class="formFilho form-floating">
+            <input type="text" class="form-control" id="floatingInputGrid" placeholder="notaAluno" value="Insira a nota">
+            <label for="floatingInputGrid">Nota :</label>
+        </div>
+        <div class="formFilho form-floating">
+            <input type="text" class="form-control" id="floatingInputGrid" placeholder="situacaoAluno" value="Insira a situação">
+            <label for="floatingInputGrid">Situação :</label>
+        </div>
+        <div class="formFilho form-floating">
+            <input type="text" class="form-control" id="floatingInputGrid" placeholder="nomeAluno" value="Insira o CEP">
+            <label for="floatingInputGrid">CEP :</label>
+        </div>
+    </div>
+    <br />
+    <div class="botao">
+        <a type="submit" class="btn btn-primary" role="button" asp-area="" asp-controller="Aluno" asp-action="Aluno"> Voltar</a>
+    </div>
 </div>
+
 
