@@ -1,4 +1,6 @@
-﻿@if (ViewData["MsgErro"] != null)
+﻿@model List<Aluno>
+
+@if (ViewData["MsgErro"] != null)
 {
     <div class="alert-danger">
         @ViewData["MsgErro"]
@@ -23,46 +25,35 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Marcelo</td>
-            <td>9.0</td>
-            <td>Aprovado</td>
-            <td>85421-002</td>
-            <td><a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="85421-002"> Endereco</a></td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Bernardo</td>
-            <td>4.5</td>
-            <td>Aprovado</td>
-            <td>88358-080</td>
-            <td><a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="88358-080"> Endereco</a></td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Levi</td>
-            <td>7.5</td>
-            <td>Aprovado</td>
-            <td>88553-089</td>
-            <td><a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="88553-089"> Endereco</a></td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td>Enzo</td>
-            <td>5.5</td>
-            <td>Reprovado</td>
-            <td>88350-100</td>
-            <td><a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="88350100"> Endereco</a></td>
-        </tr>
-        <tr>
-            <th scope="row">5</th>
-            <td>Raphael</td>
-            <td>6.5</td>
-            <td>Aprovado</td>
-            <td>88325-020</td>
-            <td><a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="88325-020"> Endereco</a></td>
-        </tr>
+        @if (Model != null && Model.Any())
+        {
+            foreach (Aluno aluno in Model)
+            {
+                <tr>
+                    <td>
+                        @aluno.id
+                    </td>
+                    <td>
+                        @aluno.nome
+                    </td>
+                    <td>
+                        @aluno.nota
+                    </td>
+                    <td>
+                        @aluno.situacao
+                    </td>
+                    <td>
+                        @aluno.cep
+                    </td>
+                    <td>
+                        <div class="d-grid gap-2 d-md-block">
+                            <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="@aluno.cep">Endereço</a>
+                        </div>
+                    </td>
+                </tr>
+            }  
+        }
+
     </tbody>
 </table>
 <div class="text-center">
