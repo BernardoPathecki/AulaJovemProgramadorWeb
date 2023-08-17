@@ -21,7 +21,7 @@ namespace JovemProgramadorWeb.Controllers
             var aluno = _alunoRepositorio.BuscarAlunos();
             return View(aluno);
         }
-
+        #region Adicionar Aluno
         public IActionResult AdicionarAluno()
         {
             return View();
@@ -42,6 +42,34 @@ namespace JovemProgramadorWeb.Controllers
             return RedirectToAction("Aluno");
 
         }
+        #endregion
+
+        #region Atualizar Dados
+        public IActionResult EditarAluno(int id)
+        {
+            var idAluno = _alunoRepositorio.BuscarId(id);
+            return View("EditarAluno", idAluno);
+        }
+
+        public IActionResult AtualizarDadosAluno(Aluno aluno)
+        {
+            try
+            {
+                _alunoRepositorio.AtualizarDadosAluno(aluno);
+            }catch (Exception ex)
+            {
+
+            }
+            return RedirectToAction("Aluno");
+        }
+        #endregion
+
+        public IActionResult ExcluirAluno(Aluno aluno)
+        {
+            _alunoRepositorio.ExcluirAluno(aluno);
+            return RedirectToAction("Aluno");
+        }
+
 
         public async Task<IActionResult> BuscarEndereco(string cep)
         {

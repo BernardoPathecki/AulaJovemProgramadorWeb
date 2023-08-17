@@ -1,31 +1,33 @@
 ﻿@model Aluno;
 <style>
-    .Tudo{
-        display : flex;
-        flex-direction:column;
-        justify-content : center;
-        width : 100%;
-
+    .Tudo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
     }
-    .form{
+
+    .form {
         width: 30%;
         align-self: center;
-
     }
-    .formFilho{
+
+    .formFilho {
         padding-top: 1%;
         padding-bottom: 1%;
     }
+
     .botao {
         display: flex;
         justify-content: center;
         column-gap: 1%;
     }
 </style>
-<h1 class="text-center">Adicionar</h1>
+
+<h1 class="text-center">Editar</h1>
 <br />
 <div class="Tudo">
-    <form asp-controller="Aluno" asp-action="InserirAluno" class="form" method="post">
+    <form asp-controller="Aluno" asp-action="AtualizarDadosAluno" asp-route-id="@Model.id" class="form" method="put">
         <div class="formFilho form-floating">
             <input type="text" asp-for="nome" class=" form-control" id="floatingInputGrid" placeholder="nome">
             <label for="floatingInputGrid">Nome :</label>
@@ -46,9 +48,7 @@
         <br />
         <div class="botao">
             <a class="btn btn-primary" role="button" asp-area="" asp-controller="Aluno" asp-action="Aluno"> Voltar</a>
-            <button type="submit" class="btn btn-primary" role="button"> Cadastrar</button>
+            <button type="submit" class="btn btn-primary" role="button"> Editar</button>
         </div>
     </form>
 </div>
-
-
