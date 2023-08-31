@@ -1,0 +1,48 @@
+﻿@model Aluno;
+@{
+    Layout = "_LayoutDeslogado";
+}
+@if (ViewData["MsgErro"] != null)
+{
+    <div class="alert-danger">
+        @ViewData["MsgErro"]
+    </div>
+}
+
+<style>
+    .formLogin {
+        padding-top: 20% ;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .row {
+        width: 20%;
+        align-self: center;
+    }
+    .btn {
+        width : 10%;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        column-gap: 1%;
+    }
+    }
+</style>
+
+<form class="formLogin" asp-controller="Login" asp-action="Logar">
+    <h1>Login</h1>
+    <div class="row mb-3">
+        <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="nome" asp-for="nome">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="cep" class="col-sm-2 col-form-label">CEP</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="cep"asp-for="cep">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Logar</button>
+</form>

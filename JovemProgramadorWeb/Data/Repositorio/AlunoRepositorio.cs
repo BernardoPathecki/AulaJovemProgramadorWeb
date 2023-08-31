@@ -39,5 +39,15 @@ namespace JovemProgramadorWeb.Data.Repositorio
             _bancoContexto.Aluno.Remove(aluno);
             _bancoContexto.SaveChanges();
         }
+
+        public bool Logar(string nome, string cep)
+        {
+            var usuario = _bancoContexto.Aluno.FirstOrDefault(u => u.nome == nome && u.cep == cep);
+            if (usuario == null) 
+            {
+            return false;
+            }
+            return true;
+        }
     }
 }
